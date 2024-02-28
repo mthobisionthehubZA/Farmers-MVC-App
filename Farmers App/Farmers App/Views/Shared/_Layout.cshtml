@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Farm Central</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @*font awesome link to support the search icon*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome link to support social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+   
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .body-content {
+            flex: 1;
+        }
+
+        footer {
+            background-color: darkslategrey;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-icons {
+            font-size: 24px;
+            color: azure;
+        }
+
+        .fa-youtube {
+            color: white
+        }
+
+        .fa-github {
+            color: white
+        }
+
+        .fa-instagram {
+            color: white
+        }
+
+        .fa-stack-overflow {
+            color: white
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:darkslategrey">
+        <div class="container">
+            @Html.ActionLink("Farm-Central", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav ms-auto " style="font-family:'Yu Gothic'">
+                    <li>@Html.ActionLink("DashBoard", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+    <footer>
+        <br />
+        <br />
+        <div class="social-icons">
+            <a href="#" class="fab fa-youtube"></a>
+            <a href="https://github.com/mthobisionthehubZA" class="fab fa-github"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-stack-overflow"></a>
+            <!-- My social media -->
+
+        </div>
+        <br />
+        <p>&copy; @DateTime.Now.Year - Farm Central Application</p>
+    </footer>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
